@@ -1,11 +1,15 @@
 import express, { Application, Request, Response } from 'express';
 
+import btcRouter from './routes/currencies/btc';
+
 const app: Application = express();
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/api/v1/', (req: Request, res: Response) => {
   console.log(`Request ${req.method}`);
   res.status(200).send('Hello World')
 });
+
+app.use('/api/v1/btc', btcRouter);
 
 const PORT = process.env.PORT || 5002;
 
