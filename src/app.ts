@@ -4,10 +4,10 @@ const app: Application = express();
 
 app.get('/', (req: Request, res: Response) => {
   console.log(`Request ${req.method}`);
-  res.status(200).send({ message: 'Welcome to iDoc APIII' })
+  res.status(200).send('Hello World')
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5002;
 
 app.listen(
   PORT,
